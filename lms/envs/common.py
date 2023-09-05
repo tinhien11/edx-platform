@@ -3201,6 +3201,7 @@ INSTALLED_APPS = [
     'openedx.features.course_duration_limits',
     'openedx.features.content_type_gating',
     'openedx.features.discounts',
+    'openedx.features.greetings',
     'openedx.features.effort_estimation',
     'openedx.features.name_affirmation_api.apps.NameAffirmationApiConfig',
 

@@ -214,6 +214,8 @@ urlpatterns = [
     ),
     path('api/discounts/', include(('openedx.features.discounts.urls', 'openedx.features.discounts'),
                                    namespace='api_discounts')),
+    path('api/greetings/', include(('openedx.features.greetings.urls', 'openedx.features.greetings'),
+                                   namespace='api_greetings')),
     path('403', handler403),
     path('404', handler404),
     path('429', handler429),
