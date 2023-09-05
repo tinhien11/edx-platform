@@ -29,7 +29,6 @@ class TestGreetingView(APITestCase):
         self.client.login(username=self.user.username, password=TEST_PASSWORD)
         # the endpoint should return a 200 if all goes well
         response = self.client.post(self.url,  {'content': 'hello'})
-        print(response.data)
         assert response.status_code == 201
 
         expected_payload = {'content': 'hello'}
@@ -49,10 +48,10 @@ class TestGreetingView(APITestCase):
         assert expected_payload['count'] == response.data['count']
 
 
-    def test_course_user_discount_no_user(self):
+    def test_create_greeting_no_user(self):
         """
         Test that the endpoint returns a 401 if there is no user signed in
         """
         # the endpoint should return a 401 because the user is not logged in
-        response = self.client.get(self.url)
+        response = self.client.post(self.url, {'content': 'hello'})
         assert response.status_code == 401

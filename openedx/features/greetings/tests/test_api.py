@@ -22,4 +22,3 @@ class TestGreetingsAPI(TestCase):
         assert Greeting.objects.count() == 0
         Greeting.objects.create(user=self.user, content='hello')
         assert Greeting.objects.count() == 1
-
